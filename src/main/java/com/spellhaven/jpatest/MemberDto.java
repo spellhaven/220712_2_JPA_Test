@@ -7,10 +7,7 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
 @AllArgsConstructor
@@ -24,7 +21,10 @@ public class MemberDto {
 	String id;
 	String name;
 	
-	@Builder
+	public MemberDto() {
+		super();
+	}
+
 	public MemberDto(Long num, String id, String name) {
 		super();
 		this.num = num;

@@ -10,12 +10,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemberService {
 	
+	
+	// 이게 MyBatis.mapper와 SQL문을 대신한다고 생각하면 된다. MemberController와 하나씩 연결된다.
+	// 개웃겨... 그냥 SQL문인데 자바 문법이라는 포장지로 싼 것 뿐이잖아요. 그런데도 개발자들이 와! SQL 않보인다! ^^ 이렇게 좋아하네.
+	
+	
 	@Autowired
 	private MemberRepository memberRepository;
 	
 	public List<MemberDto> findAll() { // 모든 리스트 출력해 주는 메서드 (SELECT)
-		List<MemberDto> members = new ArrayList<>();
 		
+		List<MemberDto> members = new ArrayList<>();
 		memberRepository.findAll().forEach(e -> members.add(e));
 		
 		return members;
